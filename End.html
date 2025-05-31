@@ -1,37 +1,136 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Exported Figma Design</title>
-  
-  <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Koopie Coffee</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    html, body {
+      width: 100%;
+      height: 100%;
+      margin: 0;
+      padding: 0;
+      overflow-x: hidden;
+    }
+    body {
+      font-family: 'Arial', sans-serif;
+      background: #fff;
+      color: #000;
+      width: 100vw;
+      min-height: 100vh;
+    }
+    .container {
+      width: 100vw;
+      max-width: 420px;
+      margin: 0 auto;
+    }
+    .top-section {
+      position: relative;
+      height: 520px;
+      background: transparent;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .logo {
+      margin-top: 20px;
+      font-size: 32px;
+      font-weight: bold;
+      letter-spacing: 1px;
+      position: static;
+      transform: none;
+      left: auto;
+      top: auto;
+      opacity: 0;
+      animation: fadeIn 1s ease 0.2s forwards;
+    }
+    .characters {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      margin-top: 24px;
+      position: static;
+      left: auto;
+      right: auto;
+      bottom: auto;
+      opacity: 0;
+      animation: fadeIn 1s ease 0.8s forwards, floatUpDown 2s ease-in-out 1.8s infinite alternate;
+      background: transparent;
+    }
+    .characters img {
+      width: 100%;
+      max-width: 380px;
+      object-fit: cover;
+      display: block;
+      margin-bottom: 0;
+      position: sticky;
+      top: 0;
+      z-index: 2;
+      background: transparent;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(30px);}
+      to { opacity: 1; transform: translateY(0);}
+    }
+    @keyframes floatUpDown {
+      from { transform: translateY(0);}
+      to { transform: translateY(-30px);}
+    }
+    .bottom-section {
+      background: #DDE440;
+      text-align: center;
+      padding: 40px 0;
+    }
+    .bottom-section h1 {
+      font-size: 28px;
+      line-height: 1;
+      color: #FEEEC4;
+      font-weight: 300;
+    }
+    .highlight {
+      font-weight: 700;
+      color: #FEEEC4;
+    }
+    .start-button {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 12px 24px;
+      background-color: #FF3F34;
+      color: white;
+      font-weight: bold;
+      border-radius: 24px;
+      text-decoration: none;
+      font-size: 14px;
+      transition: background 0.3s, transform 0.2s;
+    }
+    .start-button:hover {
+      background: #d32f2f;
+      color: #fff;
+      transform: scale(1.05);
+    }
+  </style>
 </head>
 <body>
-<div class="logo-koopie-1-10">
-  <img src="images/vector-11.svg" class="vector-11" alt="vector" />
-  <img src="images/vector-12.svg" class="vector-12" alt="vector" />
-  <img src="images/vector-13.svg" class="vector-13" alt="vector" />
-  <img src="images/vector-14.svg" class="vector-14" alt="vector" />
-  <img src="images/vector-15.svg" class="vector-15" alt="vector" />
-  <img src="images/vector-16.svg" class="vector-16" alt="vector" />
-  <img src="images/vector-stroke-17.svg" class="vector-stroke-17" alt="vector-stroke" />
-</div>
-<div class="ui-homepage-1">
-<img src="images/star-1-2.svg" class="star-1-2" alt="star-1" />
-<img src="images/node-3.png" class="node-3" alt="tak-berjudul212_20250530164111" />
-<img src="images/node-4.png" class="node-4" alt="maskot-1_20250531000521-1" />
-<img src="images/star-2-5.svg" class="star-2-5" alt="star-2" />
-<div class="rectangle-23-6"></div>
-<div class="pink-bg">
-  <p class="text-7"><span class="text-rgb-255-248-197">Find your
-  Best Coffee
-  near UPI!</span></p>
-  <div class="frame-1-8">
-    <p class="text-9"><span class="text-rgb-255-248-197">Start Now</span></p>
+  <div class="container">
+    <div class="top-section">
+      <div class="logo"> <img src="images/LOGO KOOPIE.png" alt="Koopie characters" /> </div>
+      <div class="characters" style="margin-top: -20px;">
+        <img src="images/Group 29.png" alt="Koopie characters" />
+      </div>
+    </div>
+    <div class="bottom-section" style="text-align: center; padding: 25px;">
+     <h1 style="font-size: 25px; color: #000;"><span class="">And That’s it! hope you <B>like the recomendation</B> we offered.</span></h1>
+      <div style="text-align: center; margin-top: 15px; width: 100%;">
+        <a href="index.html" class="start-button" style="font-size: 16px; margin: 0 auto; padding: 12px 24px; width: 100%; max-width: 340px; display: block; font-style: italic;">THANK YOU</a>
+      </div>
+    </div>
   </div>
-</div>
-</div>
-
 </body>
 </html>
