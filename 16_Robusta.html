@@ -20,32 +20,37 @@
     }
     .container {
       width: 100vw;
-      max-width: 420px;
-      margin: 0 auto;
+      padding-right: 35px;
     }
     .top-section {
       display: flex;
       flex-direction: column;
       align-items: center;
       padding-top: 20px;
+      animation: fadeIn 1s ease;
     }
     .logo img {
       width: 120px;
+      animation: popIn 0.8s cubic-bezier(.68,-0.55,.27,1.55);
     }
     .headline {
       margin: 24px 0 16px;
       font-size: 18px;
       text-align: center;
       font-weight: 300;
+      animation: slideDown 1s 0.3s both;
     }
     .cafe-img {
-      width: 90%;
+      width: 120%;
+      max-width: 1000px;
       border-radius: 12px;
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      animation: fadeInUp 1s 0.5s both;
     }
     .cafe-info {
-      margin: 24px 16px;
+      margin: 24px 0;
       text-align: center;
+      animation: fadeIn 1s 0.7s both;
     }
     .cafe-info h2 {
       font-size: 20px;
@@ -66,15 +71,47 @@
       font-size: 14px;
       font-weight: bold;
       margin-top: 16px;
+      transition: background 0.3s, transform 0.2s;
+      animation: popIn 0.8s 1s both;
+    }
+    .find-button:hover {
+      background: #ff4040;
+      transform: scale(1.05);
     }
     .navigation {
       display: flex;
       justify-content: space-between;
       padding: 16px;
       font-size: 24px;
+      animation: fadeIn 1s 1.2s both;
     }
-    .navigation span {
+    .navigation span, .navigation div {
       cursor: pointer;
+      transition: color 0.2s, transform 0.2s;
+    }
+    .navigation .back-arrow:hover,
+    .navigation .forward-arrow:hover {
+      color: #FF6B6B;
+      transform: scale(1.2);
+    }
+
+    /* Animations */
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(40px);}
+      to { opacity: 1; transform: translateY(0);}
+    }
+    @keyframes slideDown {
+      from { opacity: 0; transform: translateY(-30px);}
+      to { opacity: 1; transform: translateY(0);}
+    }
+    @keyframes popIn {
+      0% { opacity: 0; transform: scale(0.7);}
+      80% { opacity: 1; transform: scale(1.1);}
+      100% { opacity: 1; transform: scale(1);}
     }
   </style>
 </head>
@@ -85,16 +122,16 @@
         <img src="images/LOGO KOOPIE.png" alt="Koopie Logo" />
       </div>
       <div class="headline">The cafe you most likely to like is....</div>
-      <img class="cafe-img" src="images/Sweet Cafe Moccacino.png" alt="Mikha Coffee Setiabudi" />
+      <img class="cafe-img" src="images/Group 34.png" alt="Mikha Coffee Setiabudi" />
       <div class="cafe-info">
-        <h2>Mikha Coffee Setiabudi</h2>
-        <p>Jl. Dr. Setiabudi No.135, Gegerkalong, Kec. Sukasari, Kota Bandung, Jawa Barat 40153</p>
-        <a href="#" class="find-button">Find it here!</a>
+        <h2>CW Coffee</h2>
+        <p>Jl. Gegerkalong Girang No.27, Gegerkalong, Kec. Sukasari, Kota Bandung, Jawa Barat 40153</p>
+        <a href="https://maps.google.com/?q=CW+Coffee+Jl.+Gegerkalong+Girang+No.27+Bandung" class="find-button" target="_blank" rel="noopener" aria-label="Find CW Coffee on Google Maps">Find it here!</a>
       </div>
     </div>
     <div class="navigation">
-      <span>&larr;</span>
-      <span>&rarr;</span>
+      <div class="back-arrow" onclick="window.location.href='8.html'">&#8592;</div>
+      <div class="forward-arrow" onclick="window.location.href='End.html'">&#8594;</div>
     </div>
   </div>
 </body>
