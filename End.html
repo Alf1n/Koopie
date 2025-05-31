@@ -32,7 +32,7 @@
     .top-section {
       position: relative;
       height: 520px;
-      background: transparent;
+      background: #fff;
       overflow: hidden;
       display: flex;
       flex-direction: column;
@@ -48,7 +48,17 @@
       left: auto;
       top: auto;
       opacity: 0;
-      animation: fadeIn 1s ease 0.2s forwards;
+      animation: fadeInDown 1s 0.2s forwards;
+    }
+    @keyframes fadeInDown {
+      from {
+        opacity: 0;
+        transform: translateY(-40px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
     .characters {
       width: 100%;
@@ -61,8 +71,18 @@
       right: auto;
       bottom: auto;
       opacity: 0;
-      animation: fadeIn 1s ease 0.8s forwards, floatUpDown 2s ease-in-out 1.8s infinite alternate;
+      animation: fadeInUp 1s 0.7s forwards;
       background: transparent;
+    }
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(40px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
     .characters img {
       width: 100%;
@@ -73,20 +93,23 @@
       position: sticky;
       top: 0;
       z-index: 2;
-      background: transparent;
+      background: #fff;
+      animation: float 3s ease-in-out infinite;
     }
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(30px);}
-      to { opacity: 1; transform: translateY(0);}
-    }
-    @keyframes floatUpDown {
-      from { transform: translateY(0);}
-      to { transform: translateY(-30px);}
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-18px); }
     }
     .bottom-section {
-      background: #DDE440;
+      background: #FF3F34;
       text-align: center;
       padding: 40px 0;
+      opacity: 0;
+      animation: fadeIn 1s 1.2s forwards;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
     }
     .bottom-section h1 {
       font-size: 28px;
@@ -97,23 +120,44 @@
     .highlight {
       font-weight: 700;
       color: #FEEEC4;
+      animation: highlightPulse 1.5s infinite alternate;
+    }
+    @keyframes highlightPulse {
+      from { color: #FEEEC4; }
+      to { color: #DDE440; }
     }
     .start-button {
       display: inline-block;
       margin-top: 20px;
       padding: 12px 24px;
-      background-color: #FF3F34;
+      background-color: #2B6EFF;
       color: white;
       font-weight: bold;
       border-radius: 24px;
       text-decoration: none;
       font-size: 14px;
-      transition: background 0.3s, transform 0.2s;
+      opacity: 0;
+      transform: scale(0.95);
+      animation: buttonPop 0.7s 1.7s forwards;
+      transition: background 0.2s, transform 0.2s;
+    }
+    @keyframes buttonPop {
+      from {
+        opacity: 0;
+        transform: scale(0.95);
+      }
+      70% {
+        opacity: 1;
+        transform: scale(1.08);
+      }
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
     }
     .start-button:hover {
-      background: #d32f2f;
-      color: #fff;
-      transform: scale(1.05);
+      background: #1a4db8;
+      transform: scale(1.04);
     }
   </style>
 </head>
@@ -122,13 +166,15 @@
     <div class="top-section">
       <div class="logo"> <img src="images/LOGO KOOPIE.png" alt="Koopie characters" /> </div>
       <div class="characters" style="margin-top: -20px;">
-        <img src="images/Group 29.png" alt="Koopie characters" style="width: 100vw; max-width: 100vw; height: auto; display: block; margin: 0 auto;" />
+        <img src="images/Group 19.png" alt="Koopie characters" style="background: transparent; width: 100vw; max-width: 420px; height: auto; display: block; margin: 0 auto;" />
       </div>
     </div>
-    <div class="bottom-section" style="text-align: center; padding: 25px;">
-     <h1 style="font-size: 25px; color: #000;"><span class="">And That’s it! hope you <B>like the recomendation</B> we offered.</span></h1>
+    <div class="bottom-section" style="text-align: center; padding-left: 32px;">
+      <h1 style="font-size: 50px; line-height: 1.1; text-align: left;">
+      Find your <br>Best <span class="highlight">Coffee</span><br> near <span class="highlight">UPI!</span>
+      </h1>
       <div style="text-align: center; margin-top: 15px; width: 100%;">
-        <a href="index.html" class="start-button" style="font-size: 16px; margin: 0 auto; padding: 12px 24px; width: 100%; max-width: 340px; display: block; font-style: italic;">THANK YOU</a>
+        <a href="1.html" class="start-button" style="font-size: 16px; margin: 0 auto; padding: 12px 24px; width: 100%; max-width: 340px; display: block; font-style: italic;">START NOW</a>
       </div>
     </div>
   </div>
