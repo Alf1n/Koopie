@@ -20,32 +20,58 @@
     }
     .container {
       width: 100vw;
-      max-width: 420px;
-      margin: 0 auto;
+      padding-right: 35px;
     }
     .top-section {
       display: flex;
       flex-direction: column;
       align-items: center;
       padding-top: 20px;
+      animation: fadeIn 1.2s ease;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(40px);}
+      to { opacity: 1; transform: translateY(0);}
     }
     .logo img {
       width: 120px;
+      animation: logoPop 1s cubic-bezier(.68,-0.55,.27,1.55);
+    }
+    @keyframes logoPop {
+      0% { transform: scale(0.7); opacity: 0;}
+      60% { transform: scale(1.1);}
+      100% { transform: scale(1); opacity: 1;}
     }
     .headline {
       margin: 24px 0 16px;
       font-size: 18px;
       text-align: center;
       font-weight: 300;
+      animation: fadeInText 1.4s 0.3s both;
+    }
+    @keyframes fadeInText {
+      from { opacity: 0; letter-spacing: 0.2em;}
+      to { opacity: 1; letter-spacing: normal;}
     }
     .cafe-img {
-      width: 90%;
+      width: 120%;
+      max-width: 1000px;
       border-radius: 12px;
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      animation: imgZoomIn 1.2s 0.5s both;
+    }
+    @keyframes imgZoomIn {
+      from { opacity: 0; transform: scale(0.95);}
+      to { opacity: 1; transform: scale(1);}
     }
     .cafe-info {
-      margin: 24px 16px;
+      margin: 24px 0;
       text-align: center;
+      animation: fadeInUp 1s 0.8s both;
+    }
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(30px);}
+      to { opacity: 1; transform: translateY(0);}
     }
     .cafe-info h2 {
       font-size: 20px;
@@ -66,15 +92,36 @@
       font-size: 14px;
       font-weight: bold;
       margin-top: 16px;
+      transition: background 0.3s, transform 0.2s;
+      animation: buttonPop 0.8s 1.2s both;
+    }
+    .find-button:hover {
+      background: #ff8787;
+      transform: scale(1.05);
+    }
+    @keyframes buttonPop {
+      from { opacity: 0; transform: scale(0.8);}
+      to { opacity: 1; transform: scale(1);}
     }
     .navigation {
       display: flex;
       justify-content: space-between;
       padding: 16px;
       font-size: 24px;
+      animation: fadeInNav 1s 1.4s both;
     }
-    .navigation span {
+    @keyframes fadeInNav {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    .navigation span, .navigation div {
       cursor: pointer;
+      transition: color 0.2s, transform 0.2s;
+    }
+    .navigation .back-arrow:hover,
+    .navigation .forward-arrow:hover {
+      color: #FF6B6B;
+      transform: scale(1.2);
     }
   </style>
 </head>
@@ -85,17 +132,17 @@
         <img src="images/LOGO KOOPIE.png" alt="Koopie Logo" />
       </div>
       <div class="headline">The cafe you most likely to like is....</div>
-      <img class="cafe-img" src="images/Sweet Cafe Moccacino.png" alt="Mikha Coffee Setiabudi" />
+      <img class="cafe-img" src="images/Group 31.png" alt="Mikha Coffee Setiabudi" />
       <div class="cafe-info">
-        <h2>Mikha Coffee Setiabudi</h2>
-        <p>Jl. Dr. Setiabudi No.135, Gegerkalong, Kec. Sukasari, Kota Bandung, Jawa Barat 40153</p>
-        <a href="#" class="find-button">Find it here!</a>
+        <h2>Berawal Coffee</h2>
+        <p>Jl. Gegerkalong Girang Baru No.1, Isola, Kec. Sukasari, Kota Bandung, Jawa Barat 40154</p>
+        <a href="https://maps.google.com/?q=Mikha+Coffee+Setiabudi" class="find-button" target="_blank" rel="noopener" aria-label="Find Mikha Coffee Setiabudi on Google Maps">Find it here!</a>
       </div>
     </div>
     <div class="navigation">
-      <span>&larr;</span>
-      <span>&rarr;</span>
+      <div class="back-arrow" onclick="window.location.href='6.html'">&#8592;</div>
+      <div class="forward-arrow" onclick="window.location.href='End.html'">&#8594;</div>
     </div>
   </div>
 </body>
-</html>
+</html></div>
